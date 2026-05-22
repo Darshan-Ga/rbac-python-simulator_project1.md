@@ -1,17 +1,27 @@
-# 🔍 Role Permissions Enumerator (Python)
+# RBAC Permission Simulator
 
-A lightweight security script designed to audit and display the complete permission profile of an identity container. This utility simulates the discovery phase of an Identity and Access Management (IAM) evaluation, mapping roles to their authorized systemic capabilities.
+Built while studying Course 2 of the Google Cybersecurity Certificate 
+— Play It Safe: Manage Security Risks.
 
----
+## What it does
+Simulates a basic Role-Based Access Control system.
+- 4 roles: admin, developer, analyst, intern
+- Each role has specific permitted actions
+- Wrong key = access denied before permission check even runs
+- Every attempt is logged as GRANTED or DENIED
 
-## 🎯 Project Overview
-In large enterprise environments, security analysts frequently need to audit roles to ensure compliance with the **Principle of Least Privilege (PoLP)**. This tool automates that assessment locally by accepting a target organizational role, verifying its presence within the authorization schema, and extracting all associated operations.
+## Concepts practiced
+- Role-Based Access Control (RBAC)
+- Principle of Least Privilege
+- Authentication before authorization
+- Access logging (like a basic SOC audit trail)
 
-### Key Security & Coding Mechanisms:
-* **Clearance Enumeration:** Dynamically strings together separate arrays of permissions into a single, comma-separated list using Python's string joining logic.
-* **Input Hardening:** Utilizes `.strip()` to slice off accidental trailing spaces and `.lower()` to sanitize the input vector against case-mismatch bypass errors.
-* **Constant-Time Mapping:** Leverages a dictionary key lookup algorithm ($O(1)$ complexity) to locate the target authorization block without scanning the entire structural model.
+## How to run
+python rbac_simulator.py
 
+## Note
+This is a learning project built to make IAM theory concrete.
+Not production code.
 ---
 
 ## 💻 Source Code
